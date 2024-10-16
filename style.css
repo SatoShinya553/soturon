@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 16px 0;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container {
+    display: flex;
+    height: calc(100vh - 64px - 64px); /* header と footer の高さを引いた高さを設定 */
+}
+
+.text-section {
+    flex: 5;
+    padding: 16px;
+    border-right: 1px solid #ddd;
+    overflow-y: scroll; /* 左側エリアの縦スクロールを有効化 */
+}
+
+.scroll-divider {
+    width: 1px;
+    background: #ddd;
+}
+
+.exercise-section {
+    flex: 5;
+    padding: 16px;
+    overflow-y: hidden; /* 右側エリアの縦スクロールを無効化 */
+}
+
+.exercise-code {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    font-family: monospace;
+    flex-grow: 1;
+}
+
+.button-container {
+    display: flex;
+    margin-top: 8px;
+}
+
+.output-box {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    background: #f4f4f4;
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.output-box h4 {
+    margin: 0 0 8px 0;
+    font-size: 19.2px;
+}
+
+.output {
+    background: #fff;
+    padding: 16px;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+}
+
+
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+    display: none;
+  }
+  
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer_open {
+    display: flex;
+    height: 10px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+  }
+  
+  /* ハンバーガーメニューのアイコン */
+  .drawer_open span,
+  .drawer_open span:before,
+  .drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #fff;
+    transition: 0.5s;
+    position: absolute;
+  }
+  
+  /* 三本線の一番上の棒の位置調整 */
+  .drawer_open span:before {
+    bottom: 8px;
+  }
+  
+  /* 三本線の一番下の棒の位置調整 */
+  .drawer_open span:after {
+    top: 8px;
+  }
+  
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  
+  #drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+    
+  /* メニューのデザイン*/
+  .nav_content {
+    width: 30%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: #fff;
+    transition: .5s;
+    opacity: 0.9;
+  }
+  
+  /* メニュー黒ポチを消す */
+  .nav_list {
+    list-style: none;
+  }
+  
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_content {
+    left: 0;
+  }
