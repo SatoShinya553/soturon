@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プログラミング学習教材</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.0/full/pyodide.js"></script>
+</head>
+<body>
+    <header>
+        <h1>プログラミング入門</h1>
+        <div class="nav">
+    
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+            <label for="drawer_input" class="drawer_open"><span></span></label>
+        
+            <nav class="nav_content">
+              <ul class="nav_list">
+                <li class="nav_item"><a href="#top">TOP</a></li>
+                <li class="nav_item"><a href="#table">目次</a></li>
+                <li class="nav_item"><a href="#0">はじめてのプログラミング</a></li>
+                <li class="nav_item"><a href="#1">四則演算</a></li>
+                <li class="nav_item"><a href="#2">変数とリスト</a></li>
+                <li class="nav_item"><a href="#3">for文</a></li>
+                <li class="nav_item"><a href="#4">if文</a></li>
+                <li class="nav_item"><a href="#5">確認問題</a></li>
+              </ul>
+            </nav>       
+          </div>
+    </header>
+    <main>
+        <section class="content-container">
+            <div class="text-section">
+                <h2 id="top" class="heading-41">はじめに</h2>
+                <p>本サイトは、初めてプログラミングをする方を対象にプログラミングの基礎について学ぶチュートリアルです。
+                <br>Pythonを用いてプログラミングを学んでいきますが、Pythonに限らず様々なプログラム言語で用いられる基礎的な知識に絞って紹介していきます。
+                </p>
+                <h2 class="heading-41">Pythonとは</h2>
+                <p>
+                    プログラミング言語の中でもPythonは近年人気の高い言語です。
+                    <br>Pythonは、コードの記述がシンプルで読みやすいため初心者でも始めやすい言語です。
+                    <br>豊富なライブラリやフレームワークが多く提供されており、初心者から専門家まで幅広い層に人気です。
+                    <br>Pythonで出来ることは多岐にわたりますが、人工知能の開発や機械学習など近年のIT業界でトレンドであり今後も伸びていくことが予想される分野で使われることが多く将来性があり、覚える価値のある言語と言えます。
+                </p>
+                <h2 id="table" class="heading-41">目次</h2>
+                <div class="toc-001">
+                    <ol>
+                        <li><a href="#0">はじめてのプログラミング</a></li>
+                        <li><a href="#1">四則演算</a></li>
+                        <li><a href="#2">変数とリスト</a></li>
+                        <li><a href="#3">for文</a></li>
+                        <li><a href="#4">if文</a></li>
+                        <li><a href="#5">確認問題</a></li>
+                    </ol>
+                </div>
+                <h2 id="0" class="heading-41">はじめてのプログラミング</h2>
+                <p>
+                    最初のプログラムは最も基本的なものである、Hello,world!と出力されるプログラムを作ります。
+                    <br>出力するにはprint()を用います。文字列を出力したい場合、()の中にシングルクォーテーション、またはダブルクォーテーションで出力したい文字を囲みます。
+                    <br>画面右のプログラム入力エリアにprint('Hello,world!')と入力し、実行ボタンを押してみましょう。
+                    <br>※"プログラムを見る"をクリックすると答えが表示されます。プログラムがわからない時などに開いてみてください。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                    <pre><code>print('Hello,world!')</code></pre>
+                </details>
+                <h5><a href="#top">TOPへ</a></h5>
+                <h2 id="1" class="heading-41">四則演算</h2>
+                <p>
+                    加算は+、減算は-、乗算は*、除算は/で行います。
+                    <br>6 + 4、8 - 7、6 * 2、9 / 3の計算をやってみましょう。printの()で式を囲んで実行してみましょう。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                <pre><code>print(6 + 4)<br>print(8 - 7)<br>print(6 * 2)<br>print(9 / 3)</code></pre>
+                </details>
+                <p>
+                    割ったときの余りを求める場合は%累乗は**で求めます。
+                    <br>9を2で割ったときの余りと9の2乗を求めてみましょう。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                    <pre><code>print(9 % 2)<br>print(9 ** 2)</code></pre>
+                </details>
+                <h5><a href="#top">TOPへ</a></h5>
+
+                <h2 id="2" class="heading-41">変数とリスト</h2>
+                <p>
+                    <h3>変数について</h3>
+                    プログラミングに関する用語として「変数」があります。変数とは、数値や文字列などのデータを一時的に入れておく場所のことです。
+                    <br>変数には変数名として名前を付け、あとから参照したり値を変更したりすることができます。
+                    <div class="box-012">
+                        <span>変数の書き方</span>
+                        <br><pre><code>変数名 = 数値、文字列など</code></pre>
+                    </div>
+                </p>
+                <p>
+                    変数名nameにあなたの名前を代入して出力してみましょう。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                    <pre><code>name = 'あなたの名前'<br>print(name)</code></pre>
+                </details>        
+                
+                <p>
+                    変数を使った計算ではx + 1やx * 1のような書き方以外にx += 1やx *= 1のように、短縮して書くことで見やすくなり、間違いを防ぐこともできます。変数名xに5を、変数名yに3を代入してxからyを減算してみましょう。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                <pre><code>x = 5<br>y = 3<br>x -= y<br>print(x)</code></pre>
+                </details>
+
+                <h3>リストについて</h3>
+                <p>
+                    リストは複数の数値や文字列を1つの変数にまとめたものです。個々のデータを要素と言い、1つ1つの要素を,で区切って並べ[]で全体を囲んで作ります。
+                    <br>要素番号を指定することでリストの中から任意のデータを取り出したり、変更したりすることができます。
+                    <br>要素番号はリストの先頭から0で始まります。
+                    <div class="box-012">
+                        <span>リストの書き方</span>
+                        <br><pre><code>変数名 = [数値や文字列,数値や文字列,数値や文字列]</code></pre>
+                    </div>
+                </p>
+                <p>
+                    変数名fruitsにバナナ、モモ、オレンジをリストに入れてバナナを取り出してみましょう。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                    <pre><code>fruits = ["バナナ", "モモ","オレンジ"]<br>print(fruits[0])</code></pre>
+                </details>
+                <p>
+                    リストに要素を追加したい場合は.append()を使います。
+                    <div class="box-012">
+                        <span>リストに要素を追加する</span>
+                        <br><pre><code>変数名.append('追加したい要素')</code></pre>
+                    </div>
+                </p>
+                <p>
+                    先ほど作成したfruitsリストにあなたの好きなフルーツを追加してみましょう。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                    <pre><code>fruits = ["バナナ", "モモ","オレンジ"]<br>fruits.append("イチゴ")<br>print(fruits)</code></pre>
+                        
+                </details>
+                <h5><a href="#top">TOPへ</a></h5>
+                <h2 id="3" class="heading-41">for文</h2>
+                <p>
+                    for文は、同じ処理を繰り返すときに用います。
+                    <div class="box-012">
+                        <span>for文の書き方</span>
+                        <br><pre><code>for 変数名 in 文字列、リストなど:<br>    実行する処理</code></pre>
+                    </div>
+                </p>
+                <p>
+                    for文を使う際に、range()を用いることがよくあります。range()を使うと指定した回数分だけ処理が行われます。
+                    <div class="box-012">
+                        <span>range()の書き方</span>
+                        <br><pre><code>for 変数名 in range(繰り返したい回数):<br>    実行する処理</code></pre>
+                    </div>
+                </p>
+                <p>
+                    range()を使って*を10個連続で出力するプログラム作ってみましょう。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                    <pre><code>for i in range(10):<br>    print('*')</code></pre>
+                </details>
+                <h5><a href="#top">TOPへ</a></h5>
+                <h2 id="4" class="heading-41">if文</h2>
+                <p>if文は、条件に基づいて異なるコードを実行する際に使います。
+                    <div class="box-012">
+                        <span>if文の書き方</span>
+                        <br><pre><code>if 条件:<br>    実行する処理</code></pre>
+                    </div>                   
+                    <br>if文は、与えられた条件が満たされている行の箇所のコードを実行します。
+                    <br>tenに37を代入し、条件をtenが35以上の場合、猛暑日と出力されるプログラムを作ってみましょう。
+                </p>
+                <details class="accordion-001">
+                    <summary>プログラムを見る</summary>
+                    <pre><code>ten = 37<br>if ten >= 35:<br>    print('猛暑日')</code></pre>
+                </details>
+                <p>
+                    条件が満たされなかったときに実行したい処理がある場合は、elseを用います。               
+                    <div class="box-012">
+                        <span>elseの書き方</span>
+                        <br><pre><code>if 条件:<br>    条件が満たされているときに実行する処理<br>else:<br>    条件が満たされていないときに実行する処理</code></pre>
+                    </div>
+                </p>    
+                <p>
+                    ageに20を代入して、18以下なら未成年、そうでなければ成人と出力されるプログラムを作りましょう。
+                    <br>実行することができたらageに他の数字も入れて実行してみましょう。
+                    <details class="accordion-001">
+                        <summary>プログラムを見る</summary>
+                        <pre><code>age = 20<br>if age < 18:<br>    print('未成年')<br>else:<br>    print('成人')</code></pre>
+                    </details>
+                </p>
+                <p>
+                    条件が満たされなかったときに、さらに別の条件で分岐させたいときはelifを用います。
+                    <div class="box-012">
+                        <span>elifの書き方</span>
+                        <br><pre><code>if 条件:<br>    条件が満たされているときに実行する処理<br>elif 条件:<br>    elifの条件で満たされたときに実行する処理<br>else:<br>    条件が満たされていないときに実行する処理</code></pre>
+                    </div>
+                </p>
+                <p>
+                    変数名btに血液型を設定し、btを判定して血液型を出力するプログラムを作りましょう。
+                    <details class="accordion-001">
+                        <summary>プログラムを見る</summary>
+                        <pre><code>bt = 'O'<br>if bt == 'A':<br>    print('血液型はA型です')<br>elif bt == 'B':<br>    print('血液型はB型です')<br>elif bt == 'O':<br>    print('血液型はO型です')<br>else:<br>    print('血液型はAB型です')</code></pre>
+                    </details>
+                </p>
+                <h5><a href="#top">TOPへ</a></h5>
+                <h2 id="5" class="heading-41">確認問題</h2>
+                <p>
+                    最後にこれまで学習してきたことを合わせたプログラムを2問解いてみましょう。
+                    <br>確認問題では、今までのようなにプログラムは提示しませんが、正しく実行された際の実行結果の例を提示しています。
+                </p>
+                <h4 class="heading-24" data-number="Q">　　1</h4>
+                <p>
+                    変数名numbersの中に好きな数字を5つ入力して、リストの中の最大値と最小値を取り出すプログラムを作ってください。
+                </p>
+                <div class="box-021" data-number="例">
+                    <img src="phot/確認問題1.png">
+                    <!--
+                        numbers = [17,31,10,8,25]
+                        
+                        max_value = numbers[0]
+                        min_value = numbers[0]
+                        
+                        for num in numbers:
+                            if num > max_value:
+                                max_value = num
+                            if num < min_value:
+                                min_value = num
+                        
+                        print("リストの中身:", numbers)
+                        print("最大値は:", max_value)
+                        print("最小値は:", min_value)
+
+                    -->
+                </div>
+                <h4 class="heading-24" data-number="Q">　　2</h4>
+                <p>
+                    変数名numbersの中に適当な数字を5つ入力して、リストの中の数値を偶数と奇数に分けるプログラムを作ってください。
+                </p>
+                <div class="box-021" data-number="例">
+                    <img src="phot/確認問題2.png">
+                    <!--
+                        numbers = [9,3,14,26,18]
+                        evens = []
+                        odds = []
+
+                        for num in numbers:
+                            if num % 2 == 0:
+                                evens.append(num)
+                            else:
+                                odds.append(num)
+                        
+                            print("リストの中身:", numbers)
+                            print("偶数リスト", evens)
+                            print("奇数リスト", odds)
+                    -->
+                </div>
+                <h5><a href="#top">TOPへ</a></h5>
+            </div>
+            <!-- 左右の切れ目 -->
+            <div class="scroll-divider"></div>
+            <div class="exercise-section">
+                <h2>プログラム入力エリア</h2>
+                <div class="exercise-code">
+                    <textarea id="code-input" rows="10" cols="50"></textarea>
+                    <div class="button-container">
+                        <button class="run-btn" data-input-id="code-input" data-output-id="output">実行</button>
+                        <button class="reset-btn" data-input-id="code-input">リセット</button>
+                    </div>
+                    <div class="output-box">
+                        <h4>実行結果</h4>
+                        <div id="output" class="output"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 プログラミング入門</p>
+    </footer>
+    <script src="script.js"></script>    
+</body>
+</html>
